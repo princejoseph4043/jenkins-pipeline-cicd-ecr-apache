@@ -20,3 +20,5 @@ node {
           docker.image("repo:${remoteImageTag}").push(remoteImageTag)
     }
 }
+    
+}
