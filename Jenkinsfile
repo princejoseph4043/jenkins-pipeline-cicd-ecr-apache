@@ -3,7 +3,7 @@ node {
     def serviceName     = "hello-world-service"
     def taskFamily      = "hello-world"
     def clusterName     = "ecscluster-ECSCluster-ti1zVZcvYlpN"
-    def remoteImageTag  = "${imageTag}-${BUILD_NUMBER}"
+    def remoteImageTag  = "${imageTag}_${BUILD_NUMBER}"
     def taskDefile      = "file://aws/task-definition-${remoteImageTag}.json"
     def ecRegistry      = "https://%ACCOUNT%.dkr.ecr.eu-central-1.amazonaws.com"
 
@@ -12,7 +12,7 @@ node {
     }
 
     stage('Build image') {
-        sh "docker build --no-cache -t repo:${remoteImageTag} ."
+        sh "docker build -t ${remoteImageTag} ."
     }
 
     stage('Push image') {
