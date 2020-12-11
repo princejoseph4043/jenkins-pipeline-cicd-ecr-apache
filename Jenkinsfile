@@ -16,7 +16,7 @@ node {
     }
     
     stage("Docker push") {
-    docker.withR      ("${ecRegistry}, "ecr:us-east-1:ecr-authentication") {
+    docker.withRegistry(ecRegistry, "ecr:us-east-1:ecr-authentication") {
           docker.image("${remoteImageTag}").push(remoteImageTag)
         }
     }
