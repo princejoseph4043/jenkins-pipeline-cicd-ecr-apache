@@ -3,7 +3,7 @@ node {
     def serviceName     = "hello-world-service"
     def taskFamily      = "hello-world"
     def clusterName     = "ecscluster-ECSCluster-ti1zVZcvYlpN"
-    def remoteImageTag  = "${imageTag}_${BUILD_NUMBER}"
+    def remoteImageTag  = "${BUILD_NUMBER}"
     def taskDefile      = "file://aws/task-definition-${remoteImageTag}.json"
     def ecRegistry      = "https://122910936396.dkr.ecr.us-east-1.amazonaws.com"
 
