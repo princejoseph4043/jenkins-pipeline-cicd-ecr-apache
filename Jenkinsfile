@@ -12,11 +12,11 @@ node {
     }
 
     stage('Build image') {
-        sh "docker build -t ${remoteImageTag} ."
+        sh "docker build -t repo:${remoteImageTag} ."
     }
     
     stage("Docker push") {
     docker.withRegistry(ecRegistry, "ecr:us-east-1:ecr-authentication") {
-          docker.image("${remoteImageTag}").push(remoteImageTag)
+          docker.image("repo:${remoteImageTag}").push(remoteImageTag)
     }
 }
