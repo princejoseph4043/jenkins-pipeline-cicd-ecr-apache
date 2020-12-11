@@ -12,7 +12,7 @@ node {
     }
 
     stage('Build image') {
-        sh "docker build -t hello-world${remoteImageTag} ."
+        sh "docker build -t hello-world:${remoteImageTag} ."
     }
     
     stage("Docker push") {
