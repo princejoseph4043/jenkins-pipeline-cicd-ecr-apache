@@ -1,5 +1,5 @@
 node {
-    def imageTag        = "122910936396.dkr.ecr.us-east-1.amazonaws.com/hello-world"
+    def imageTag        = "hello-world"
     def serviceName     = "hello-world-service"
     def taskFamily      = "hello-world"
     def clusterName     = "ecscluster-ECSCluster-ti1zVZcvYlpN"
