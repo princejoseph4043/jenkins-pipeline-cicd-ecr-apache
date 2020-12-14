@@ -24,7 +24,7 @@ node {
         // Replace BUILD_TAG placeholder in the task-definition file -
         // with the remoteImageTag (imageTag-BUILD_NUMBER)
         sh  "                                                                     \
-          sed -e  's;%BUILD_TAG%;${remoteImageTag};g'                             \
+          sed -i  'ss/%BUILD_TAG%/${remoteImageTag}/g'                             \
                   aws/task-definition.json >                                      \
                   aws/task-definition-${remoteImageTag}.json                      \
         "
