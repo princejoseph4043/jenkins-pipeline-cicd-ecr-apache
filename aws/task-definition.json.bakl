@@ -2,15 +2,15 @@
     "family": "hello-world",
     "containerDefinitions": [
         {
-            "image": "122910936396.dkr.ecr.us-east-1.amazonaws.com/hello-world:%BUILD_TAG%",
+            "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
             "name": "hello-world",
-            "essential": true,
             "cpu": 10,
-            "memoryReservation": 256,
+            "memory": 256,
+            "essential": true,
             "portMappings": [
                 {
                     "containerPort": 80,
-                    "hostPort": 80
+                    "hostPort": 0
                 }
             ]
         }
