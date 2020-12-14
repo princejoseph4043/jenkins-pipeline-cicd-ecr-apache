@@ -8,7 +8,7 @@ node {
     def taskDefile      = "file://aws/task-definition-${remoteImageTag}.json"
 
     stage('Clone repository') {
-        git branch: "master", url: "https://github.com/princejoseph4043/jenkins-freestyle-cicd-ecr-apache.git"
+        git branch: "master", url: "https://github.com/princejoseph4043/jenkins-pipeline-cicd-ecr-apache.git"
     }
 
     stage('Build image') {
