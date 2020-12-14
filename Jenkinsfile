@@ -78,7 +78,7 @@ node {
         // Register the new [TaskDefinition]
         sh  "                                                                     \
           aws ecs register-task-definition  --family ${taskFamily}                \
-                                            --cli-input-json ${taskDefile}        \
+                                            --cli-input-json file://${taskDefile}        \
         "
 
         // Get the last registered [TaskDefinition#revision]
