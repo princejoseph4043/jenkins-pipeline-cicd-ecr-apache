@@ -68,7 +68,7 @@ node {
             aws ecs update-service  --cluster ${clusterName}                      \
                                     --service ${serviceName}                      \
                                     --task-definition ${taskFamily}:${currTaskDef}\
-                                    --desired-count 2                             \
+                                    --desired-count 0                             \
           "
         }
         if (currentTask) {
